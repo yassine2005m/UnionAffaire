@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Coworking Premium | Union des Affaires</title>
+    <link rel="stylesheet" href="coworking.css">
+    <link rel="stylesheet" href="centre.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Espace de coworking haut de gamme à Casablanca pour entrepreneurs et professionnels">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://union-affaires.ma/coworking">
+    <meta property="og:title" content="Espace Coworking Premium | Union des Affaires">
+    <meta property="og:description" content="Travaillez dans un environnement professionnel inspirant au cœur de Casablanca">
+    <meta property="og:image" content="https://union-affaires.ma/img/coworking-og.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://union-affaires.ma/coworking">
+    <meta property="twitter:title" content="Espace Coworking Premium | Union des Affaires">
+    <meta property="twitter:description" content="Travaillez dans un environnement professionnel inspirant au cœur de Casablanca">
+    <meta property="twitter:image" content="https://union-affaires.ma/img/coworking-og.jpg">
+</head>
+<body>
+    <!-- Navigation Premium -->
+    <header class="header-sticky">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="union des affaires logo de yassine.png" alt="Union des Affaires" width="100" class="logo-img">
+    </a>
+
+    <nav class="nav-premium" id="nav-premium">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li class="dropdown">
+          <a href="#">Services <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="coworking.html">Espace Coworking</a>
+            <a href="centre-appel.html">Centre d'Appel</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a href="tel:+212600800747" class="btn-phone">
+        <i class="fas fa-phone-alt"></i> +212 600-800747
+      </a>
+      <button class="btn-cta" id="main-cta">Réserver un espace</button>
+    </div>
+
+    <!-- BOUTON HAMBURGER -->
+    <button class="hamburger" id="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+
+    <!-- Hero Section -->
+    <section class="hero-video">
+        <div class="video-background">
+            <video autoplay muted loop playsinline poster="istockphoto-2177071931-612x612.webp">
+ <source src="WhatsApp Vidéo 2025-05-09 à 16.58.15_a332076b.mp4" type="video/mp4">            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Espace Coworking <span></span></h1>
+                <p class="hero-subtitle">
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-lg" id="hero-cta">
+                        <i class="fas fa-calendar-alt"></i> Réserver maintenant
+                    </button>
+                    <a href="#espaces" class="btn-outline btn-lg">
+                        <i class="fas fa-building"></i> Découvrir les espaces
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Espaces Section -->
+    <section class="espaces-section" id="espaces">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nos Espaces</span>
+                <h2>Choisissez <strong>Votre Environnement</strong></h2>
+                <p>Des solutions adaptées à tous les besoins professionnels</p>
+            </div>
+            
+            <div class="espaces-tabs">
+                <button class="espace-tab active"  data-tab="bureaux">Bureaux Privés</button>
+                <button class="espace-tab" data-tab="postes">Postes Coworking</button>
+                <button class="espace-tab" data-tab="salles">Salles de Réunion</button>
+                <button class="espace-tab" data-tab="virtuel">Espace Virtuel</button>
+                <button class="espace-tab" data-tab="formation">Salle de Formation</button>
+
+            </div>
+            
+            <div class="espaces-content">
+                <!-- Contenu dynamique chargé via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages Section -->
+    <section class="avantages-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Avantages</span>
+                <h2>Notre <strong>Valeur Ajoutée</strong></h2>
+            </div>
+            
+            <div class="avantages-grid">
+                <div class="avantage-card">
+                    <div class="avantage-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>WiFi Haut Débit</h3>
+                    <p>Connexion fibre optique sécurisée jusqu'à 1Gbps</p>
+                </div>
+                
+                <div class="avantage-card">
+                    <div class="avantage-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Espace Détente</h3>
+                    <p>Zone lounge avec café et snacks gratuits</p>
+                </div>
+                
+                <div class="avantage-card">
+                    <div class="avantage-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3>Équipements</h3>
+                    <p>Imprimantes, scanners et matériel de conférence</p>
+                </div>
+                
+                <div class="avantage-card">
+                    <div class="avantage-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Réseautage</h3>
+                    <p>Événements exclusifs pour nos membres</p>
+                </div>
+                
+                <div class="avantage-card">
+                    <div class="avantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Sécurité</h3>
+                    <p>Caméra de Surveillance </p>
+                </div>
+    </section>
+
+    
+
+    <!-- Tarifs Section -->
+    <section class="tarifs-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Tarifs</span>
+                <h2>Nos <strong>Formules</strong></h2>
+            </div>
+            
+            <div class="tarifs-grid">
+                <div class="tarif-card">
+                    <h3>Flex</h3>
+                    <div class="tarif-price">
+                        <span class="amount">250</span>
+                        <span class="currency">DH</span>
+                        <span class="period">/jour</span>
+                    </div>
+                    <ul class="tarif-features">
+                        <li><i class="fas fa-check"></i> Accès jour complet</li>
+                        <li><i class="fas fa-check"></i> Espace partagé</li>
+                        <li><i class="fas fa-check"></i> Café & snacks</li>
+                        <li><i class="fas fa-check"></i> WiFi haut débit</li>
+                        <li><i class="fas fa-times"></i> Bureau fixe</li>
+                    </ul>
+                    <button class="btn-outline">Choisir cette formule</button>
+                </div>
+                
+                <div class="tarif-card popular">
+                    <div class="popular-badge">Populaire</div>
+                    <h3>Pro</h3>
+                    <div class="tarif-price">
+                        <span class="amount">2,500</span>
+                        <span class="currency">DH</span>
+                        <span class="period">/mois</span>
+                    </div>
+                    <ul class="tarif-features">
+                        <li><i class="fas fa-check"></i> Bureau dédié</li>
+                        <li><i class="fas fa-check"></i> Accès 24/7</li>
+                        <li><i class="fas fa-check"></i> 10h de salle de réunion</li>
+                        <li><i class="fas fa-check"></i> Adresse postale</li>
+                        <li><i class="fas fa-check"></i> Événements exclusifs</li>
+                    </ul>
+                    <button class="btn-primary">Choisir cette formule</button>
+                </div>
+                
+                <div class="tarif-card">
+                    <h3>Team</h3>
+                    <div class="tarif-price">
+                        <span class="amount">4,500</span>
+                        <span class="currency">DH</span>
+                        <span class="period">/mois</span>
+                    </div>
+                    <ul class="tarif-features">
+                        <li><i class="fas fa-check"></i> Pour 3 personnes</li>
+                        <li><i class="fas fa-check"></i> Bureau privatif</li>
+                        <li><i class="fas fa-check"></i> 20h de salle de réunion</li>
+                        <li><i class="fas fa-check"></i> Accès premium</li>
+                        <li><i class="fas fa-check"></i> Support dédié</li>
+                    </ul>
+                    <button class="btn-outline">Choisir cette formule</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Témoignages</span>
+                <h2>Nos Membres <strong>Parlent de Nous</strong></h2>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"L'espace coworking d'Union des Affaires a transformé ma productivité. L'environnement est inspirant et les services impeccables."</p>
+                        <div class="client-info">
+                            <img src="alexander-mass-SbhyICmA9Po-unsplash.jpg" alt="Sarah K.">
+                            <div>
+                                <strong>Sarah K.</strong>
+                                <span>Freelance Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Parfait pour notre petite équipe. Nous avons trouvé ici la flexibilité et le professionnalisme dont nous avions besoin."</p>
+                        <div class="client-info">
+                            <img src="atul-pandey-LvPRNMgCR5E-unsplash.jpg" alt="Mehdi E." >
+                            <div>
+                                <strong>Mehdi E.</strong>
+                                <span>Startup Founder</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Prêt à rejoindre notre espace ?</h2>
+                <p>Visitez nos locaux et découvrez l'environnement idéal pour votre travail</p>
+                <div class="cta-buttons">
+                    <a href="tel:+212600800747" class="btn-call">
+                        <i class="fas fa-phone-alt"></i> Appelez-nous
+                    </a>
+                    <button class="btn-primary btn-lg" id="bottom-cta">
+                        <i class="fas fa-calendar-alt"></i> Réserver une visite
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Modal -->
+   <div class="modal-overlay" id="contact-modal">
+    <div class="modal-container">
+        <button class="modal-close" id="close-modal">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-content">
+            <h3>Demande de Réservation</h3>
+            <form id="coworking-contact-form">
+                <div class="form-group">
+                    <label for="res-nom">Nom Complet*</label>
+                    <input type="text" id="res-nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="res-email">Email*</label>
+                    <input type="email" id="res-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="res-phone">Téléphone*</label>
+                    <input type="tel" id="res-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="res-espace">Type d'espace*</label>
+                    <select id="res-espace" required>
+                        <option value="">Sélectionner</option>
+                        <option value="Bureau Privé">Bureau Privé</option>
+                        <option value="Poste Coworking">Poste Coworking</option>
+                        <option value="Salle De Réunion">Salle De Réunion</option>
+                        <option value="Espace Virtuel">Espace Virtuel</option>
+                        <option value="Salle de Formation">Salle de Formation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="res-date">Date souhaitée*</label>
+                    <input type="date" id="res-date" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block">
+                    <i class="fas fa-paper-plane"></i> Envoyer la demande
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer Premium -->
+    <footer class="premium-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="union des affaires logo de yassine.png" alt="Union des Affaires" width="180">
+                    <p>Espace de coworking premium au cœur de Casablanca pour professionnels exigeants.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Espace Coworking</h4>
+                    <ul>
+                        <li><a>Nos espaces</a></li>
+                        <li><a>Nos tarifs</a></li>
+                        <li><a>Avantages</a></li>
+                        <li><a>Actualités</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Entreprise</h4>
+                    <ul>
+                        <li><a>À propos</a></li>
+                        <li><a>Blog</a></li>
+                        <li><a>Carrières</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Angle Bd Lalla Yacout, 7ème étage, Casablanca</p>
+                        <p><i class="fas fa-phone-alt"></i> +212 600-800747</p>
+                        <p><i class="fas fa-envelope"></i> coworking@union-affaires.ma</p>
+                        <p><i class="fas fa-clock"></i> Lundi - Vendredi : 9h - 18h</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Union des Affaires. Tous droits réservés.</p>
+                <div class="legal-links">
+                    <a>Confidentialité</a>
+                    <a>Conditions</a>
+                    <a>Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fonctionnalités Premium
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal Contact
+            const modal = document.getElementById('contact-modal');
+            const openModalBtns = document.querySelectorAll('[id*="cta"], #main-cta, #bottom-cta');
+            const closeModalBtn = document.getElementById('close-modal');
+            
+            openModalBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            closeModalBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Fermer en cliquant hors du modal
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+         document.getElementById('coworking-contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nom = document.getElementById('res-nom').value;
+    const email = document.getElementById('res-email').value;
+    const phone = document.getElementById('res-phone').value;
+    const espace = document.getElementById('res-espace').value;
+    const date = document.getElementById('res-date').value;
+
+    const message = `Bonjour, je souhaite réserver un espace coworking :%0A
+👤 Nom : ${nom}%0A
+📧 Email : ${email}%0A
+📞 Téléphone : ${phone}%0A
+🏢 Espace : ${espace}%0A
+📅 Date souhaitée : ${date}`;
+
+    const whatsappUrl = `https://wa.me/212600800747?text=${encodeURI(message)}`;
+    window.open(whatsappUrl, '_blank');
+
+    this.reset();
+    document.getElementById('contact-modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+            
+            // Tabs Espaces
+            const espaceTabs = document.querySelectorAll('.espace-tab');
+            const espacesContent = document.querySelector('.espaces-content');
+            
+            const espacesData = {
+                bureaux: {
+                    title: "Bureaux Privés",
+                    description: "Un espace professionnel entièrement dédié à votre activité",
+                    features: [
+                        "Surface de 10 à 30m²",
+                        "Mobilier ergonomique haut de gamme",
+                        "Accès 24h/24, 7j/7",
+                        "Nomade sur porte",
+                        "Services inclus"
+                    ],
+                    image: "bureau privé.jpg"
+                },
+                postes: {
+                    title: "Postes Coworking",
+                    description: "Un bureau dans un espace partagé stimulant",
+                    features: [
+                        "Poste dédié en open space",
+                        "Espace de rangement sécurisé",
+                        "Accès aux espaces communs",
+                        "Réseau professionnel",
+                        "Flexibilité totale"
+                    ],
+                    image: "WhatsApp Image 2025-05-07 à 17.11.05_a700ff2d.jpg"
+                },
+                salles: {
+                    title: "Salles de Réunion",
+                    description: "Espace professionnel pour vos réunions et présentations",
+                    features: [
+                        "Capacité de 2 à 20 personnes",
+                        "Équipement high-tech",
+                        "Réservation à l'heure ou à la journée",
+                        "Service traiteur sur demande",
+                        "Décoration professionnelle"
+                    ],
+                    image: "WhatsApp Image 2025-05-07 à 17.08.09_4640530b.jpg"
+                },
+                virtuel: {
+                    title: "Espace Virtuel",
+                    description: "Une adresse professionnelle sans bureau physique",
+                    features: [
+                        "Adresse postale prestigieuse",
+                        "Réception de courrier",
+                        "Accès occasionnel aux espaces",
+                        "Service de numérisation",
+                        "Economique et flexible"
+                    ],
+                    image: "WhatsApp Image 2025-05-07 à 17.08.08_d93d0f3a.jpg"
+                },
+                formation: {
+                    title: "Salle de Formation",
+                    description: "Espace professionnel pour vos réunions et présentations",
+                    features: [
+                        "Capacité de 2 à 20 personnes",
+                        "Équipement high-tech",
+                        "Réservation à l'heure ou à la journée",
+                        "Service traiteur sur demande",
+                        "Décoration professionnelle"
+                    ],
+                    image: "WhatsApp Image 2025-05-09 à 18.14.41_f157b247.jpg"
+                }
+                
+            };
+            
+            espaceTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Active tab
+                    espaceTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Load content
+                    const tabId = tab.getAttribute('data-tab');
+                    const espace = espacesData[tabId];
+                    
+                    espacesContent.innerHTML = `
+                        <div class="espace-panel">
+                            <div class="espace-image">
+                                <img src="${espace.image}" alt="${espace.title}" loading="lazy">
+                            </div>
+                            <div class="espace-info">
+                                <h3>${espace.title}</h3>
+                                <p>${espace.description}</p>
+                                <ul class="espace-features">
+                                    ${espace.features.map(feat => `<li><i class="fas fa-check"></i> ${feat}</li>`).join('')}
+                                </ul>
+                                <button class="btn-primary espace-cta" data-espace="${tabId}">
+                                    <i class="fas fa-calendar-alt"></i> Réserver cet espace
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Add event to new CTA button
+                    document.querySelector('.espace-cta').addEventListener('click', () => {
+                        modal.style.display = 'flex';
+                        document.getElementById('espace').value = tabId;
+                        document.body.style.overflow = 'hidden';
+                    });
+                });
+            });
+            
+            // Trigger first tab
+            document.querySelector('.espace-tab.active').click();
+            
+            // Form Submission
+            document.getElementById('coworking-contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulate form submission
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Envoyé!';
+                    
+                    // Reset form
+                    setTimeout(() => {
+                        this.reset();
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                        
+                        // Show thank you message
+                        alert('Merci pour votre demande de réservation! Notre équipe vous contactera dans les plus brefs délais pour confirmation.');
+                    }, 1500);
+                }, 2000);
+            });
+            
+            // Mobile Menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navPremium = document.querySelector('.nav-premium');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                navPremium.classList.toggle('active');
+                document.body.style.overflow = navPremium.classList.contains('active') ? 'hidden' : 'auto';
+            });
+            
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navPremium.classList.contains('active')) {
+                            mobileMenuBtn.classList.remove('active');
+                            navPremium.classList.remove('active');
+                            document.body.style.overflow = 'auto';
+                        }
+                    }
+                });
+            });
+            
+            // Video fallback for mobile
+            if (window.innerWidth < 768) {
+                const heroVideo = document.querySelector('.video-background video');
+                if (heroVideo) {
+                    heroVideo.poster = "img/coworking-mobile.jpg";
+                    heroVideo.autoplay = false;
+                }
+            }
+            
+            // Testimonials slider
+            const testimonials = document.querySelectorAll('.testimonial-card');
+            let currentTestimonial = 0;
+            
+            function showTestimonial(index) {
+                testimonials.forEach((testimonial, i) => {
+                    testimonial.classList.toggle('active', i === index);
+                });
+            }
+            
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                showTestimonial(currentTestimonial);
+            }, 5000);
+        });
+    </script>
+<script src="script.js"></script>
+
+</body>
+</html>

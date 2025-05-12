@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Union des Affaires</title>
+    <meta name="description" content="Contactez Union des Affaires pour vos besoins en coworking, centre d'appel et solutions professionnelles à Casablanca">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://union-affaires.ma/contact">
+    <meta property="og:title" content="Contact | Union des Affaires">
+    <meta property="og:description" content="Contactez notre équipe pour toute demande d'information ou de réservation">
+    <meta property="og:image" content="https://union-affaires.ma/img/contact-og.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://union-affaires.ma/contact">
+    <meta property="twitter:title" content="Contact | Union des Affaires">
+    <meta property="twitter:description" content="Contactez notre équipe pour toute demande d'information ou de réservation">
+    <meta property="twitter:image" content="https://union-affaires.ma/img/contact-og.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="centre.css">
+    
+
+    <link rel="stylesheet" href="contact.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+   <header class="header-sticky">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="union des affaires logo de yassine.png" alt="Union des Affaires" width="100" class="logo-img">
+    </a>
+
+    <nav class="nav-premium" id="nav-premium">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li class="dropdown">
+          <a href="#">Services <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="coworking.html">Espace Coworking</a>
+            <a href="centre-appel.html">Centre d'Appel</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a href="tel:+212600800747" class="btn-phone">
+        <i class="fas fa-phone-alt"></i> +212 600-800747
+      </a>
+      <button class="btn-cta" id="main-cta">Réserver un espace</button>
+    </div>
+
+    <!-- BOUTON HAMBURGER -->
+    <button class="hamburger" id="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero-contact">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contactez-nous</span>
+                </div>
+                <h1>Nous sommes à votre écoute</h1>
+                <p class="hero-subtitle">Notre équipe vous répond sous 24h pour toute demande d'information, de devis ou de rendez-vous</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Grid -->
+   <section class="contact-grid-section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Formulaire de Contact -->
+      <div class="contact-form-block">
+        <div class="form-header">
+          <span class="section-tag">Formulaire</span>
+          <h2>Envoyez-nous un message</h2>
+          <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais</p>
+        </div>
+
+        <form class="contact-form" id="contact-form" onsubmit="sendToWhatsApp(); return false;">
+          <div class="form-group">
+            <input type="text" id="name" name="name" required placeholder=" ">
+            <label for="name">Nom complet</label>
+          </div>
+
+          <div class="form-group">
+            <input type="email" id="email" name="email" required placeholder=" ">
+            <label for="email">Email</label>
+          </div>
+
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" required placeholder=" ">
+            <label for="phone">Téléphone</label>
+          </div>
+
+          <div class="form-group">
+            <select id="service" name="service" required>
+              <option value="" disabled selected hidden></option>
+              <option value="coworking">Espace de coworking</option>
+              <option value="centre-appel">Centre d'appel</option>
+            </select>
+            <label for="service">Service concerné</label>
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+            <label for="message">Message</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Envoyer le message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+                <!-- Informations de Contact -->
+                <div class="contact-info-block">
+                    <div class="info-header">
+                        <span class="section-tag">Coordonnées</span>
+                        <h2>Nos informations</h2>
+                        <p>Retrouvez-nous à notre adresse ou contactez-nous directement</p>
+                    </div>
+                    
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Adresse</h3>
+                                <p>Angle Bd Lalla Yacout, 7ème étage, Casablanca</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Téléphone</h3>
+                                <p>+212 600-800747</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email</h3>
+                                <p>contact@union-affaires.ma</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Horaires</h3>
+                                <p>Lundi - Vendredi : 9h - 18h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.546174116893!2d-7.613730400000017!3d33.5911306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d29dcebcf381%3A0x4a519c66f3233d09!2z0KDRjiDQkNC70Ywg0JDRgNCw0LDRgCAmINCf0YDQvtGB0L_QtdC60YIg0JvQsNC70LAg0JnQsNC60YMsIENhc2FibGFuY2EgMjAyNTA!5e0!3m2!1sfr!2sma!4v1746616198314!5m2!1sfr!2sma" 
+                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Prêt à nous rencontrer ?</h2>
+                <p>Planifiez une visite de nos locaux ou une démonstration de nos services</p>
+                <div class="cta-buttons">
+                    <a href="tel:+212600800747" class="btn-call">
+                        <i class="fas fa-phone-alt"></i> Appelez-nous
+                    </a>
+                    <a href="reservation.html" class="btn-primary btn-lg">
+                        <i class="fas fa-calendar-alt"></i> Réserver une visite
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="premium-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="union des affaires logo de yassine - Copie.png" alt="Union des Affaires" width="150">
+                    <p>Centre d'affaires premium offrant des solutions complètes pour les entreprises à Casablanca.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="coworking.html">Espace Coworking</a></li>
+                        <li><a href="centre-appel.html">Centre d'Appel</a></li>
+                        <li><a href="domiciliation.html">Domiciliation</a></li>
+                        <li><a href="import-export.html">Import/Export</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Liens Utiles</h4>
+                    <ul>
+                        <li><a href="tarifs.html">Nos Tarifs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="jobs.html">Carrières</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Angle Bd Lalla Yacout, 7ème étage, Casablanca</p>
+                        <p><i class="fas fa-phone-alt"></i> +212 600-800747</p>
+                        <p><i class="fas fa-envelope"></i> contact@union-affaires.ma</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Union des Affaires. Tous droits réservés.</p>
+                <div class="legal-links">
+                    <a href="privacy.html">Confidentialité</a>
+                    <a href="terms.html">Conditions</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Fonctionnalités de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu mobile
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navPremium = document.querySelector('.nav-premium');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                navPremium.classList.toggle('active');
+                document.body.style.overflow = navPremium.classList.contains('active') ? 'hidden' : 'auto';
+            });
+            
+            // Gestion du formulaire
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulation d'envoi
+                    setTimeout(() => {
+                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Envoyé!';
+                        
+                        setTimeout(() => {
+                            this.reset();
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                            
+                            // Message de confirmation
+                            alert('Merci pour votre message! Notre équipe vous contactera dans les plus brefs délais.');
+                        }, 1500);
+                    }, 2000);
+                });
+            }
+            const menuBtn = document.getElementById('mobile-menu-btn');
+const nav = document.querySelector('.nav-premium');
+
+menuBtn.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+
+            
+            // Bouton back to top
+            const backToTopBtn = document.getElementById('backToTop');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.classList.add('show');
+                    } else {
+                        backToTopBtn.classList.remove('show');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Smooth scrolling pour les ancres
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+  function sendToWhatsApp() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+
+    const fullMessage =
+      `👋 Bonjour, une nouvelle demande a été soumise via le site *Union des Affaires* :%0A%0A` +
+      `🧑 *Nom complet* : ${name}%0A` +
+      `📧 *Email* : ${email}%0A` +
+      `📞 *Téléphone* : ${phone}%0A` +
+      `🏢 *Service demandé* : ${service}%0A` +
+      `📝 *Message* : %0A${message}%0A%0A` +
+      `📩 Merci de répondre rapidement à ce client.`
+
+    const whatsappNumber = "212600800747";
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
+
+    window.open(whatsappURL, '_blank');
+  }
+    </script>
+        <script src="script.js"></script>
+
+</body>
+</html>

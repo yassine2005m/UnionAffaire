@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Réservation Espace | Union des Affaires</title>
+<!-- Font Awesome pour les icônes -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Styles CSS -->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles2.css">
+
+<sTyle>
+  :root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --success-color: #27ae60;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+    line-height: 1.6;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  /* Header Styles */
+  .main-header {
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 60px;
+    width: auto;
+  }
+
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+  }
+
+  .main-nav li {
+    margin-left: 25px;
+  }
+
+  .main-nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+  }
+
+  .main-nav a i {
+    margin-right: 8px;
+    font-size: 0.9rem;
+  }
+
+  .main-nav a:hover, .main-nav a.active {
+    color: var(--secondary-color);
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-color);
+    margin: 4px 0;
+    transition: var(--transition);
+  }
+
+  /* Help Header */
+  .header-top {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+
+  .help-text {
+    text-align: center;
+  }
+
+  .help-text i {
+    margin-right: 5px;
+    color: var(--secondary-color);
+  }
+
+  .help-text strong {
+    color: var(--secondary-color);
+  }
+
+  /* Spaces Grid */
+  .spaces-grid {
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .space-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+
+  .space-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .space-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .space-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+
+  .space-card:hover .space-image img {
+    transform: scale(1.05);
+  }
+
+  .space-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .space-details {
+    padding: 20px;
+  }
+
+  .space-details h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+
+  .space-location {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .space-location i {
+    margin-right: 5px;
+  }
+
+  .space-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+  }
+
+  .space-features span {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+
+  .space-features i {
+    margin-right: 5px;
+    color: var(--secondary-color);
+  }
+
+  .space-pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .price {
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  .amount {
+    font-size: 1.5rem;
+  }
+
+  .currency {
+    font-size: 1rem;
+  }
+
+  .period {
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+  }
+
+  .btn-primary {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #2980b9;
+  }
+
+  .btn-success {
+    background-color: var(--success-color);
+    color: white;
+  }
+
+  .btn-success:hover {
+    background-color: #219955;
+  }
+
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+  }
+
+  .modal-content {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+  }
+
+  @keyframes modalFadeIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .close:hover {
+    color: var(--accent-color);
+  }
+
+  .modal h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  }
+
+  .send-whatsapp {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  /* Footer Styles */
+  .main-footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 50px 0 20px;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-brand img {
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+
+  .footer-column h4 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--secondary-color);
+  }
+
+  .footer-column ul {
+    list-style: none;
+  }
+
+  .footer-column li {
+    margin-bottom: 10px;
+  }
+
+  .footer-column a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .footer-column a:hover {
+    color: var(--secondary-color);
+  }
+
+  .footer-column i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+    width: 20px;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #bdc3c7;
+  }
+
+  /* Theme Toggle */
+  .theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+  }
+
+  .theme-toggle:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+  }
+
+  /* Back to Top */
+  .back-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+  }
+
+  .back-to-top:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+  }
+
+  .back-to-top.show {
+    display: flex;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .main-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background-color: white;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+      z-index: 1000;
+      padding-top: 80px;
+    }
+
+    .main-nav.active {
+      right: 0;
+    }
+
+    .main-nav ul {
+      flex-direction: column;
+      padding: 0 20px;
+    }
+
+    .main-nav li {
+      margin: 0 0 20px 0;
+    }
+
+    .main-nav a {
+      padding: 10px 0;
+    }
+
+    .mobile-menu-toggle {
+      display: block;
+      z-index: 1001;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .spaces-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+      width: 95%;
+      padding: 20px;
+    }
+  }
+
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  body.dark-mode .main-header,
+  body.dark-mode .space-card,
+  body.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+
+  body.dark-mode .main-nav a,
+  body.dark-mode .space-details h3,
+  body.dark-mode .modal h2 {
+    color: #e0e0e0;
+  }
+
+  body.dark-mode .form-group input,
+  body.dark-mode .form-group select {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #e0e0e0;
+  }
+
+  body.dark-mode .footer-column a,
+  body.dark-mode .footer-bottom {
+    color: #b0b0b0;
+  }
+
+  body.dark-mode .theme-toggle {
+    background-color: #444;
+  }
+  /* reservation.css - Style cohérent avec les autres pages */
+
+/* Variables communes */
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary: #1e293b;
+    --accent: #f59e0b;
+    --light: #f8fafc;
+    --dark: #0f172a;
+    --success: #10b981;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 24px rgba(26, 34, 56, 0.08);
+    --transition: all 0.3s ease;
+}
+
+/* Header Top */
+.header-top {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
+}
+
+.help-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.help-text i {
+    font-size: 1.1rem;
+}
+
+.help-text strong {
+    font-weight: 600;
+}
+
+/* Main Container */
+main.container {
+    padding: 3rem 1.5rem;
+}
+
+/* Espaces Grid */
+.spaces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.space-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.space-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(26, 34, 56, 0.12);
+}
+
+.space-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.space-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.space-card:hover .space-image img {
+    transform: scale(1.05);
+}
+
+.space-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: var(--accent);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.space-details {
+    padding: 1.5rem;
+}
+
+.space-details h3 {
+    font-size: 1.25rem;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+
+.space-location {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.space-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.space-features span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    color: var(--secondary);
+}
+
+.space-features i {
+    color: var(--primary);
+}
+
+.space-pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+.price .amount {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.price .currency {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.price .period {
+    font-size: 0.85rem;
+    color: var(--secondary);
+}
+
+/* Boutons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background-color: var(--success);
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.btn-success:hover {
+    background-color: #0ea371;
+}
+
+/* Modal de réservation */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close:hover {
+    color: var(--dark);
+}
+
+.modal-content h2 {
+    font-size: 1.75rem;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Formulaire de réservation */
+#reservationForm {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .spaces-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .space-pricing {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+      <!-- En-tête -->
+      <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html" aria-label="Accueil Union des Affaires">
+                    <img src="union des affaires logo de yassine.png" alt="Logo Union des Affaires">
+                </a>
+            </div>
+            
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="coworking.html"><i class="fas fa-desktop"></i> Coworking</a></li>
+                    <li><a href="services.html#centre-appel"><i class="fas fa-headset"></i> Centre d'Appel</a></li>
+                    <li><a href="services.html#import-export"><i class="fas fa-globe"></i> Import/Export</a></li>
+                    <li><a href="reservation.html" class="active"><i class="fas fa-calendar-alt"></i> Reserver</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Menu mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <header class="header-top">  
+      <div class="container help-text">  
+        <i class="fas fa-question-circle"></i> Besoin d'aide pour réserver ? Appelez-nous : <strong>+212 600-800747</strong>  
+      </div>   
+    </header>  
+
+    <main class="container">
+      <section class="spaces-grid">
+          <!-- Espace 1 -->
+          <div class="space-card">
+            <div class="space-image">
+              <img src="WhatsApp Image 2025-05-07 à 17.08.12_d7efc962.jpg" alt="Bureau Privé" />
+              <div class="space-badge">Bureau Privé</div>
+            </div>
+            <div class="space-details">
+              <h3>Bureau Privé</h3>
+              <p class="space-location">
+                <i class="fas fa-map-marker-alt"></i> Angle Bd Lalla Yacout, Casablanca
+              </p>
+              <div class="space-features">
+                <span><i class="fas fa-user"></i> 1-2 personnes</span>
+                <span><i class="fas fa-ruler-combined"></i> 15-20m²</span>
+                <span><i class="fas fa-wifi"></i> WiFi Haut Débit</span>
+              </div>
+              <div class="space-pricing">
+                <div class="price">
+                  <span class="amount">4000</span>
+                  <span class="currency">MAD</span>
+                  <span class="period">/mois</span>
+                </div>
+                <button class="btn btn-primary" onclick="openModal('Bureau Privé', 4000, 'mois')">Réserver</button>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Espace 2 -->
+          <div class="space-card">
+            <div class="space-image">
+              <img src="WhatsApp Image 2025-05-07 à 17.11.05_a700ff2d.jpg" alt="Espace Coworking" />
+              <div class="space-badge">Coworking</div>
+            </div>
+            <div class="space-details">
+              <h3>Poste Coworking</h3>
+              <p class="space-location">
+                <i class="fas fa-map-marker-alt"></i> Angle Bd Lalla Yacout, Casablanca
+              </p>
+              <div class="space-features">
+                <span><i class="fas fa-user"></i> 1 personne</span>
+                <span><i class="fas fa-desktop"></i> Bureau dédié</span>
+                <span><i class="fas fa-coffee"></i> Café illimité</span>
+              </div>
+              <div class="space-pricing">
+                <div class="price">
+                  <span class="amount">2500</span>
+                  <span class="currency">MAD</span>
+                  <span class="period">/mois</span>
+                </div>
+                <button class="btn btn-primary" onclick="openModal('Coworking', 2500, 'mois')">Réserver</button>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Espace 3 -->
+          <div class="space-card">
+            <div class="space-image">
+              <img src="WhatsApp Image 2025-05-07 à 17.08.09_4640530b.jpg" alt="Salle de Réunion" />
+              <div class="space-badge">Réunion</div>
+            </div>
+            <div class="space-details">
+              <h3>Salle de Réunion</h3>
+              <p class="space-location">
+                <i class="fas fa-map-marker-alt"></i> Angle Bd Lalla Yacout, Casablanca
+              </p>
+              <div class="space-features">
+                <span><i class="fas fa-users"></i> 4-8 personnes</span>
+                <span><i class="fas fa-tv"></i> Écran LCD</span>
+                <span><i class="fas fa-video"></i> Visioconférence</span>
+              </div>
+              <div class="space-pricing">
+                <div class="price">
+                  <span class="amount">300</span>
+                  <span class="currency">MAD</span>
+                  <span class="period">/heure</span>
+                </div>
+                <button class="btn btn-primary" onclick="openModal('Salle de Réunion', 300, 'heure')">Réserver</button>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Espace 4 -->
+          <div class="space-card">
+            <div class="space-image">
+              <img src="WhatsApp Image 2025-05-07 à 17.08.08_d93d0f3a.jpg" alt="Bureau personnalisé" />
+              <div class="space-badge">Bureau Personnalisé</div>
+            </div>
+            <div class="space-details">
+              <h3>Bureau Personnalisé</h3>
+              <p class="space-location">
+                <i class="fas fa-map-marker-alt"></i> Angle Bd Lalla Yacout, Casablanca
+              </p>
+              <div class="space-features">
+                <span><i class="fas fa-user"></i> 1 personne</span>
+                <span><i class="fas fa-ruler-combined"></i> 10-15m²</span>
+                <span><i class="fas fa-key"></i> Accès 24/7</span>
+              </div>
+              <div class="space-pricing">
+                <div class="price">
+                  <span class="amount">3000</span>
+                  <span class="currency">MAD</span>
+                  <span class="period">/mois</span>
+                </div>
+                <button class="btn btn-primary" onclick="openModal('Bureau Personnalisé', 3000, 'mois')">Réserver</button>
+              </div>
+            </div>
+          </div>
+      </section>
+    </main>
+
+    <!-- Modal pour la réservation -->
+    <div id="reservationModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Réservation</h2>
+        <form id="reservationForm">
+          <input type="hidden" id="spaceName" name="spaceName" />
+          <input type="hidden" id="spacePrice" name="spacePrice" />
+          <input type="hidden" id="priceType" name="priceType" />
+          
+          <div class="form-group">
+            <label for="nom">Nom complet:</label>
+            <input type="text" id="nom" name="nom" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp:</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+212*********" required />
+          </div>
+          <div class="form-group">
+            <label for="date">Date de réservation:</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label for="duration">Durée/Type:</label>
+            <select id="duration" name="duration" required>
+              <option value="">Sélectionner</option>
+              <option value="1 mois">1 mois</option>
+              <option value="3 mois">3 mois (5% réduction)</option>
+              <option value="6 mois">6 mois (10% réduction)</option>
+              <option value="1 heure">1 heure</option>
+              <option value="1 journée">1 journée</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success">Envoyer la réservation</button>
+        </form>
+        <div class="send-whatsapp" id="sendWhatsApp"></div>
+      </div>
+    </div>
+    <footer class="main-footer">
+      <div class="container">
+          <div class="footer-content">
+              <div class="footer-brand">
+                  <img src="union des affaires logo de yassine - Copie.png" alt="Logo Union des Affaires" class="footer-logo">
+                  <p>Votre partenaire pour le développement de votre entreprise depuis 2010</p>
+              </div>
+              
+              <div class="footer-links">
+                  <div class="footer-column">
+                      <h4>Services</h4>
+                      <ul>
+                          <li><a href="coworking.html">Espace Coworking</a></li>
+                          <li><a href="services.html#centre-appel">Centre d'Appel</a></li>
+                          <li><a href="services.html#import-export">Import/Export</a></li>
+                      </ul>
+                  </div>
+                  
+                  <div class="footer-column">
+                      <h4>Contact</h4>
+                      <ul>
+                          <li><i class="fas fa-map-marker-alt"></i> Angle Bd Lalla Yacout, 7ème étage, Casablanca</li>
+                          <li><i class="fas fa-phone"></i> +212 600-800747</li>
+                          <li><i class="fas fa-envelope"></i> contact@union-affaires.ma</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="footer-bottom">
+              <p>&copy; 2025 Union des Affaires. Tous droits réservés.</p>
+          </div>
+      </div>
+  </footer>
+
+   
+
+    <!-- Bouton Mode Sombre -->
+    <button id="darkModeToggle" class="theme-toggle" aria-label="Changer le thème">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Bouton Retour en haut -->
+    <button id="backToTop" class="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+<script>
+  // Fonctions pour la modal de réservation
+  function openModal(spaceName, price, priceType) {
+    const modal = document.getElementById('reservationModal');
+    document.getElementById('spaceName').value = spaceName;
+    document.getElementById('spacePrice').value = price;
+    document.getElementById('priceType').value = priceType;
+    
+    // Ajuster les options de durée en fonction du type de prix
+    const durationSelect = document.getElementById('duration');
+    durationSelect.innerHTML = '';
+    
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = 'Sélectionner';
+    durationSelect.appendChild(defaultOption);
+    
+    if (priceType === 'mois') {
+      const options = [
+        {value: '1 mois', text: '1 mois'},
+        {value: '3 mois', text: '3 mois (5% réduction)'},
+        {value: '6 mois', text: '6 mois (10% réduction)'}
+      ];
+      
+      options.forEach(option => {
+        const optElement = document.createElement('option');
+        optElement.value = option.value;
+        optElement.textContent = option.text;
+        durationSelect.appendChild(optElement);
+      });
+    } else {
+      const options = [
+        {value: '1 heure', text: '1 heure'},
+        {value: '1 journée', text: '1 journée'}
+      ];
+      
+      options.forEach(option => {
+        const optElement = document.createElement('option');
+        optElement.value = option.value;
+        optElement.textContent = option.text;
+        durationSelect.appendChild(optElement);
+      });
+    }
+    
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('reservationModal');
+    modal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Gestion du formulaire de réservation
+  document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const spaceName = document.getElementById('spaceName').value;
+    const name = document.getElementById('nom').value;
+    const email = document.getElementById('email').value;
+    const whatsapp = document.getElementById('whatsapp').value;
+    const date = document.getElementById('date').value;
+    const duration = document.getElementById('duration').value;
+    const price = document.getElementById('spacePrice').value;
+    
+    // Créer le message WhatsApp
+    let message = `Bonjour, je souhaite réserver:\n\n`;
+    message += `*Espace:* ${spaceName}\n`;
+    message += `*Nom:* ${name}\n`;
+    message += `*Email:* ${email}\n`;
+    message += `*Date:* ${date}\n`;
+    message += `*Durée:* ${duration}\n`;
+    message += `*Prix:* ${price} MAD\n\n`;
+    message += `Merci de me confirmer cette réservation.`;
+    
+    // Encoder le message pour URL
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/212771503357?text=${encodedMessage}`;
+    
+    // Afficher le lien WhatsApp
+    const whatsappDiv = document.getElementById('sendWhatsApp');
+    whatsappDiv.innerHTML = `
+      <p>Ou envoyez-nous directement votre demande sur WhatsApp:</p>
+      <a href="${whatsappUrl}" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center;">
+        <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Envoyer sur WhatsApp
+      </a>
+    `;
+    
+    // Vous pouvez aussi ajouter ici une requête AJAX pour sauvegarder la réservation
+    // alert('Votre demande de réservation a été envoyée avec succès!');
+  });
+
+  // Gestion du menu mobile
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mainNav = document.getElementById('mainNav');
+
+  mobileMenuBtn.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+
+  // Bouton retour en haut
+  const backToTopBtn = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      backToTopBtn.style.display = 'flex';
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.style.display = 'none';
+      backToTopBtn.classList.remove('show');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Mode sombre
+  const darkModeToggle = document.getElementById('darkModeToggle');
+
+  darkModeToggle.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    
+    if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('darkMode', 'enabled');
+      this.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+      localStorage.setItem('darkMode', 'disabled');
+      this.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+  });
+
+  // Vérifier le mode au chargement
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  }
+
+  // Fermer la modal en cliquant à l'extérieur
+  window.addEventListener('click', function(event) {
+    const modal = document.getElementById('reservationModal');
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Fermer la modal avec la touche Escape
+  document.addEventListener('keydown', function(event) {
+    const modal = document.getElementById('reservationModal');
+    if (event.key === 'Escape' && modal.classList.contains('show')) {
+      closeModal();
+    }
+  });
+
+  // Définir la date minimale pour le champ date (aujourd'hui)
+  document.getElementById('date').min = new Date().toISOString().split('T')[0];
+</script>
+<script src="script.js"></script>
+</body>
+</html>
