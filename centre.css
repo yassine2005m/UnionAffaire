@@ -116,6 +116,25 @@ body {
     color: #2c3e50;
     margin-bottom: 10px;
 }
+/* CORRECTION DES BANDES BLANCHES */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+}
+@media (max-width: 768px) {
+    .hero-section, .stats-section, footer, .footer-full-width {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Pour les sections avec fond coloré */
+.hero-section, .stats-section, footer {
+    width: 100vw; /* 100% de la largeur de la vue */
+    margin-left: calc(-50vw + 50%); /* Centre parfaitement */
+}
 
 .stat-label {
     font-size: 1.2rem;
