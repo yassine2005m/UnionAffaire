@@ -34,7 +34,7 @@
         <li class="dropdown">
           <a href="#">Services <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
-            <a href="coworking.html">Espace Coworking</a>
+            <a href="coworking.html">Espace Co-working</a>
             <a href="centre-appel.html">Centre d'Appel</a>
           </div>
         </li>
@@ -48,8 +48,6 @@
       </a>
       <button class="btn-cta" id="main-cta">Réserver un espace</button>
     </div>
-
-    <!-- BOUTON HAMBURGER -->
     <button class="hamburger" id="mobile-menu-btn">
       <span></span>
       <span></span>
@@ -60,8 +58,8 @@
 
     <section class="hero-video">
         <div class="video-background">
-            <video autoplay muted loop playsinline poster="ua.png">
-                <source src="WhatsApp Vidéo 2025-05-09 à 16.58.15_a332076b.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline poster="WhatsApp Image 2025-05-07 à 17.08.13_39723c20.jpg">
+                <img src="WhatsApp Image 2025-05-07 à 17.08.13_39723c20.jpg">
                 Votre navigateur ne supporte pas les vidéos HTML5
             </video>
             <div class="video-overlay"></div>
@@ -240,7 +238,7 @@
                         </div>
                         <p>"L'espace coworking d'Union des Affaires a complètement transformé ma façon de travailler. L'environnement est professionnel et inspirant."</p>
                         <div class="client-info">
-                            <img src="atul-pandey-LvPRNMgCR5E-unsplash.jpg" alt="Karim B." loading="lazy">
+                            <img src="atul-pandey-LvPRNMgCR5E-unsplash.jpg" alt="Karim B.">
                             <div>
                                 <strong>Karim B.</strong>
                                 <span>Freelance Designer</span>
@@ -369,6 +367,11 @@
                     });
                 });
                 
+  document.querySelector('.language-selector').addEventListener('change', function() {
+    const lang = this.value;
+    // Exemple : redirige vers une version anglaise
+    if (lang === 'en') window.location.href = 'https://yoursite.com/en';
+  });
                 closeModalBtn.addEventListener('click', () => {
                     modal.style.display = 'none';
                     document.body.style.overflow = 'auto';
@@ -493,6 +496,13 @@ const nav = document.querySelector('.nav-premium');
 menuBtn.addEventListener('click', () => {
   nav.classList.toggle('active');
 });
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const navMenu = document.querySelector('nav'); // Ciblez votre menu principal
+
+  mobileMenuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active'); // Active/désactive le menu
+    mobileMenuBtn.classList.toggle('open'); // Animation des barres
+  });
 
     </script>
     <script src="script.js"></script>

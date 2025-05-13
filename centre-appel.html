@@ -35,7 +35,7 @@
         <li class="dropdown">
           <a href="#">Services <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
-            <a href="coworking.html">Espace Coworking</a>
+            <a href="coworking.html">Espace Co-working</a>
             <a href="centre-appel.html">Centre d'Appel</a>
           </div>
         </li>
@@ -91,11 +91,11 @@
         <div class="container">
             <p>Ils nous font confiance :</p>
             <div class="client-logos">
-                <img src="téléchargement (5).jpg" alt="Client 1" loading="lazy">
-                <img src="téléchargement.jpg" alt="Client 2" loading="lazy">
-                <img src="alexander-mass-SbhyICmA9Po-unsplash.jpg" alt="Client 3" loading="lazy">
-                <img src="atul-pandey-LvPRNMgCR5E-unsplash.jpg" alt="Client 4" loading="lazy">
-                <img src="téléchargement (10).jpg" alt="Client 5" loading="lazy">
+                <img src="téléchargement (5).jpg" alt="Client 1">
+                <img src="téléchargement.jpg" alt="Client 2">
+                <img src="alexander-mass-SbhyICmA9Po-unsplash.jpg" alt="Client 3">
+                <img src="atul-pandey-LvPRNMgCR5E-unsplash.jpg" alt="Client 4">
+                <img src="téléchargement (10).jpg" alt="Client 5">
             </div>
         </div>
     </section>
@@ -615,7 +615,15 @@ menuBtn.addEventListener('click', () => {
                 }
             }
         });
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const navMenu = document.querySelector('nav'); // Ciblez votre menu principal
+
+  mobileMenuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active'); // Active/désactive le menu
+    mobileMenuBtn.classList.toggle('open'); // Animation des barres
+  });
     </script>
+    
     <script src="script.js"></script>
 
 </body>
