@@ -98,6 +98,35 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+.stats-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
