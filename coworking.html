@@ -65,8 +65,8 @@
     <!-- Hero Section -->
     <section class="hero-video">
         <div class="video-background">
-            <video autoplay muted loop playsinline poster="istockphoto-2177071931-612x612.webp">
- <source src="WhatsApp Vidéo 2025-05-09 à 16.58.15_a332076b.mp4" type="video/mp4">            </video>
+            <video autoplay muted loop playsinline poster="WhatsApp Image 2025-05-07 à 17.08.08_d93d0f3a.jpg">
+ <img src="WhatsApp Image 2025-05-07 à 17.08.08_d93d0f3a.jpg">            </video>
             <div class="video-overlay"></div>
         </div>
         <div class="container">
@@ -531,7 +531,7 @@
                     espacesContent.innerHTML = `
                         <div class="espace-panel">
                             <div class="espace-image">
-                                <img src="${espace.image}" alt="${espace.title}" loading="lazy">
+                                <img src="${espace.image}" alt="${espace.title}">
                             </div>
                             <div class="espace-info">
                                 <h3>${espace.title}</h3>
@@ -644,13 +644,6 @@
                 showTestimonial(currentTestimonial);
             }, 5000);
         });
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const navMenu = document.querySelector('nav'); // Ciblez votre menu principal
-
-  mobileMenuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('active'); // Active/désactive le menu
-    mobileMenuBtn.classList.toggle('open'); // Animation des barres
-  });
     </script>
 <script src="script.js"></script>
 </body>
