@@ -216,7 +216,11 @@ body.dark-mode .premium-footer {
     border-radius: 8px;
     overflow: hidden;
 }
-
+@media (max-width: 768px) {
+  .hero-title { font-size: 1.8rem; }
+  .service-card { width: 100% !important; }
+  .hero-buttons { flex-direction: column; }
+}
 .service-image img {
     width: 100%;
     height: auto;
