@@ -25,7 +25,15 @@
   .hamburger {
     display: block;
   }
-
+.hero-subtitle {
+    color: white !important;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
   .nav-premium.active {
     display: block;
   }
