@@ -26,7 +26,7 @@
  <header class="header-sticky">
   <div class="container">
     <a href="index.html">
-      <img src="logo new.jpg" alt="Union des Affaires" width="100" class="logo-img">
+      <img src="test logo 2.jpg" alt="Union des Affaires" width="100" class="logo-img">
     </a>
 
     <nav class="nav-premium" id="nav-premium">
@@ -49,8 +49,9 @@
       </a>
       <button class="btn-cta" id="main-cta">Réserver un espace</button>
     </div>
-
-    <!-- BOUTON HAMBURGER -->
+<button id="dark-mode-toggle" class="btn btn-outline-secondary ms-3" aria-label="Basculer le mode sombre">
+  <i id="theme-icon" class="fas fa-moon"></i>
+</button>
     <button class="hamburger" id="mobile-menu-btn">
       <span></span>
       <span></span>
@@ -302,7 +303,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="logo new.jpg" alt="Union des Affaires" width="180">
+                    <img src="test logo.png" alt="Union des Affaires" width="180">
                     <p>Centre d'affaires premium offrant des solutions complètes pour les entreprises internationales.</p>
                 </div>
                 
@@ -612,6 +613,28 @@ menuBtn.addEventListener('click', () => {
   mobileMenuBtn.addEventListener('click', () => {
     navMenu.classList.toggle('active'); // Active/désactive le menu
     mobileMenuBtn.classList.toggle('open'); // Animation des barres
+  });
+       const toggle = document.getElementById('dark-mode-toggle');
+  const icon = document.getElementById('theme-icon');
+
+  // Vérifie si un thème est déjà stocké
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    icon.classList.replace('fa-moon', 'fa-sun');
+  }
+
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    
+    // Change l’icône
+    if (isDark) {
+      icon.classList.replace('fa-moon', 'fa-sun');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      icon.classList.replace('fa-sun', 'fa-moon');
+      localStorage.setItem('theme', 'light');
+    }
   });
     </script>
     

@@ -25,7 +25,7 @@
   <header class="header-sticky">
   <div class="container">
     <a href="index.html">
-      <img src="logo new.jpg" alt="Union des Affaires" width="100" class="logo-img">
+      <img src="test logo.png" alt="Union des Affaires" width="150" class="logo-img">
     </a>
 
     <nav class="nav-premium" id="nav-premium">
@@ -48,6 +48,11 @@
       </a>
       <button class="btn-cta" id="main-cta">Réserver un espace</button>
     </div>
+    <!-- Bouton Mode Sombre -->
+<button id="dark-mode-toggle" class="btn btn-outline-secondary ms-3" aria-label="Basculer le mode sombre">
+  <i id="theme-icon" class="fas fa-moon"></i>
+</button>
+
     <button class="hamburger" id="mobile-menu-btn">
       <span></span>
       <span></span>
@@ -79,33 +84,41 @@
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
-    <section class="services-section" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Nos Services</span>
-                <h2>Solutions <strong>Professionnelles</strong></h2>
-                <p>Découvrez nos services clés pour développer votre entreprise</p>
+<section class="services-section" id="services">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Nos Services</span>
+            <h2>Solutions <strong>Professionnelles</strong></h2>
+            <p>Découvrez nos services clés pour développer votre entreprise</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <h3>Espace Coworking</h3>
+                <p>Un lieu de travail moderne et flexible : bureaux privatifs, salles de reunion, salle de formation, et bien plus encore.</p>
+                <div class="service-image">
+                    <img src="Espace Coworking.png" alt="Espace Coworking">
+                </div>
+                <a href="coworking.html" class="service-link">Découvrir <i class="fas fa-arrow-right"></i></a>
             </div>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>Espace Coworking</h3>
-                    <p>Un lieu de travail moderne et flexible : bureaux privatifs, salles de reunion, salle de formation, et bien plus encore.</p>
-                    <a href="coworking.html" class="service-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-headset"></i>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Centre d'Appel</h3>
-                    <p>Des postes de travail équipés, une infrastructure fiable et un environnement calme pour vos activités..</p>
-                    <a href="centre-appel.html" class="service-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                <h3>Centre d'Appel</h3>
+                <p>Des postes de travail équipés, une infrastructure fiable et un environnement calme pour vos activités.</p>
+                <div class="service-image">
+                    <img src="Centre d'appel home page.png" alt="Centre d'appel">
                 </div>
-    </section>
+                <a href="centre-appel.html" class="service-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
     <section class="video-presentation">
         <div class="container">
             <div class="video-wrapper">
@@ -136,7 +149,7 @@
     <div class="advantage-card">
         <div class="advantage-number">01</div>
         <h3>Emplacement Stratégique</h3>
-        <p>Au centre de Casablanca, à proximité de Derb Omar, entouré de banques, du tramway, de restaurants et de sociétés.</p>
+        <p>Au centre ville de Casablanca à proximité du centre commercial derb Omar,banques, tramway,des restaurants,et des sociétés de divers activités...</p>
     </div>
     
     <div class="advantage-card">
@@ -292,7 +305,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="logo new.jpg" alt="Union des Affaires" width="150">
+                    <img src="test logo.png" alt="Union des Affaires" width="200">
                     <p>Centre d'affaires premium offrant des solutions complètes pour les entreprises à Casablanca.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -354,7 +367,31 @@
                         document.body.style.overflow = 'hidden';
                     });
                 });
-                
+ 
+  const toggle = document.getElementById('dark-mode-toggle');
+  const icon = document.getElementById('theme-icon');
+
+  // Vérifie si un thème est déjà stocké
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    icon.classList.replace('fa-moon', 'fa-sun');
+  }
+
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    
+    // Change l’icône
+    if (isDark) {
+      icon.classList.replace('fa-moon', 'fa-sun');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      icon.classList.replace('fa-sun', 'fa-moon');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
+
   document.querySelector('.language-selector').addEventListener('change', function() {
     const lang = this.value;
     // Exemple : redirige vers une version anglaise
@@ -364,6 +401,7 @@
                     modal.style.display = 'none';
                     document.body.style.overflow = 'auto';
                 });
+                
                 
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) {
